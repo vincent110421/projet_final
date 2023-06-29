@@ -1,14 +1,60 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{#{% block title %}Hello MainController!{% endblock %}#}
 
 {% block body %}
 
+    <div class="row"></div>
 
-<div class="text-center">
-    <h1>Hello {{ controller_name }}! </h1>
+    <h1>Matériels</h1>
+
+    <p>Nous proposons une large gamme de matériels dans différents domaines : infrastructure, réseaux, poste de travail, serveurs, NAS,SAN</p>
+
+{#    <p class="p1">Commutateur Routeur<br>Nous fournissons des matériels réseaux de toutes marques afin de satisfaire tous les budgets.</p>#}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2 class="card-title"></h2><i class="fa-light fa-globe"></i>
+            <h3 class="card-subtitle mb-2 text-body-secondary">Commutateur Routeur</h3>
+            <p class="card-text">Nous fournissons des matériels réseaux de toutes marques afin de satisfaire tous les budgets.</p>
+
+        </div>
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2 class="card-title"></h2>
+            <i class="fa-light fa-globe"></i>
+            <h3 class="card-subtitle mb-2 text-body-secondary">Infrastructure</h3>
+            <p class="card-text">Solution de stockage, de sauvegarde, de serveurs ... Ici nous proposons des systèmes adaptés à vos problématiques</p>
+
+        </div>
+            <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2 class="card-title"></h2><i class="fa-sharp fa-light fa-buildings"></i>
+            <h3 class="card-subtitle mb-2 text-body-secondary">Écran</h3>
+            <p class="card-text">Nous distribuons tout type d’écran : interactif, médical , incurvé etc …</p>
+
+        </div>
+                <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2 class="card-title"></h2><i class="fa-light fa-globe"></i>
+            <h3 class="card-subtitle mb-2 text-body-secondary">Imprimante</h3>
+            <p class="card-text">Nous avons au catalogue divers périphériques d' impressions</p>
+
+        </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h2 class="card-title"></h2><i class="fa-light fa-globe"></i>
+                            <h3 class="card-subtitle mb-2 text-body-secondary">Devis - Conseil</h3>
+                            <p class="card-text">N’hesitez pas à nous contactez afin d’obtenir conseilet un devis adapté à votre situation</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
 
-</div>
 {% endblock %}

@@ -1,4 +1,35 @@
 
 
+.row{
+    height: 600px;
+   background-image: url("../images/martinm.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+h1{
+    text-align: center;
+    color: #2A4999;
+    font-weight: bold;
+}
+
+p{
+    text-align: center;
+}
 
 
+
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    align-content: space-between;
+    border-color: red;
+}
+
+.fa-light .fa-globe{
+    display: flex;
+    justify-content: center;
+}
