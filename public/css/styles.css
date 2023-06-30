@@ -1,3 +1,16 @@
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    justify-content: space-between;
+    border-color: red;
+}
+
+@media screen and (min-width: 383px){
+    .card
+}
+
+
 .navbar-brand {
 
     color: white;
@@ -7,8 +20,12 @@
     color: white;
 }
 
-.fa-solid .fa-globe i{
-    text-align: center;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2A4999;
+
 }
 
 
@@ -19,9 +36,9 @@
 
 .img{
     height: 600px;
-    background-image: url("../images/martinm.jpg");
+    background-image: url("../images/bannieres.jpg");
     background-size: cover;
-    background-attachment: fixed;
+
 }
 
 h1{
@@ -34,21 +51,12 @@ p{
     text-align: center;
 }
 
-.card{
-    display: flex;
-    flex-wrap: wrap;
-    height: 200px;
-    justify-content: space-between;
-    border-color: red;
-}
 
-.fa-light .fa-globe{
-    display: flex;
-    justify-content: center;
-}
+
 
 h3.card-subtitle{
     text-align: center;
+    
 }
 
 h2.card-subtitle{
@@ -58,3 +66,4 @@ h2.card-subtitle{
 .card-text{
     text-align: center;
 }
+
