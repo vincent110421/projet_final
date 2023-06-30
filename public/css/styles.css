@@ -1,4 +1,7 @@
-
+.img-fluid{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .row{
     height: 600px;
@@ -25,7 +28,8 @@ p{
     display: flex;
     flex-wrap: wrap;
     height: 200px;
-    align-content: space-between;
+    /*align-content: space-between;*/
+    justify-content: space-between;
     border-color: red;
 }
 
