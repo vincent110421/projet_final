@@ -1,60 +1,97 @@
 {% extends 'base.html.twig' %}
 
-{#{% block title %}Hello MainController!{% endblock %}#}
+{# {% block title %}Hello MainController!{% endblock %} #}
 
 {% block body %}
+<div class="img"></div>
 
-    <div class="row"></div>
+<h1>Matériels</h1>
 
-    <h1>Matériels</h1>
+<p>Nous proposons une large gamme de matériels dans différents domaines : infrastructure, réseaux, poste de travail,
+    serveurs, NAS,SAN</p>
 
-    <p>Nous proposons une large gamme de matériels dans différents domaines : infrastructure, réseaux, poste de travail, serveurs, NAS,SAN</p>
+                    <div class="cards offset-1 ">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <i class="fa-solid fa-globe"></i>
+                                <h2 class="card-title"></h2>
+                                <h3 class="card-subtitle mb-2 text-body-secondary">Commutateur Routeur</h3>
+                                <p class="card-text">Nous fournissons des matériels réseaux de toutes marques afin de satisfaire tous les budgets.</p>
 
-{#    <p class="p1">Commutateur Routeur<br>Nous fournissons des matériels réseaux de toutes marques afin de satisfaire tous les budgets.</p>#}
+                            </div>
+                            <div class="card offset-1" style="width: 18rem;">
+                            <div class="card-body">
+                                <h2 class="card-title"></h2>
+                                <i class="fa-regular fa-building"></i>
+                                <h3 class="card-subtitle mb-2 text-body-secondary">Infrastructure</h3>
+                                <p class="card-text justify-content-center">Solution de stockage, de sauvegarde, de serveurs ... Ici nous proposons des systèmes adaptés à vos problématiques</p>
 
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h2 class="card-title"></h2><i class="fa-light fa-globe"></i>
-            <h3 class="card-subtitle mb-2 text-body-secondary">Commutateur Routeur</h3>
-            <p class="card-text">Nous fournissons des matériels réseaux de toutes marques afin de satisfaire tous les budgets.</p>
+                            </div>
+                                <div class="card offset-1" style="width: 18rem;">
+                            <div class="card-body">
+                                <h2 class="card-title"></h2>
+                                <i class="fa-solid fa-display"></i>
+                                <h3 class="card-subtitle mb-2 text-body-secondary">Écran</h3>
+                                <p class="card-text justify-content-center">Nous distribuons tout type d’écran : interactif, médical , incurvé etc …</p>
 
-        </div>
-        <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h2 class="card-title"></h2>
-            <i class="fa-light fa-globe"></i>
-            <h3 class="card-subtitle mb-2 text-body-secondary">Infrastructure</h3>
-            <p class="card-text">Solution de stockage, de sauvegarde, de serveurs ... Ici nous proposons des systèmes adaptés à vos problématiques</p>
+                            </div>
+                                    <div class="card offset-1" style="width: 18rem;">
+                            <div class="card-body">
+                                <h2 class="card-title"></h2>
+                                <i class="fa-solid fa-print"></i>
+                                <h3 class="card-subtitle mb-2 text-body-secondary">Imprimante</h3>
+                                <p class="card-text">Nous avons au catalogue divers périphériques d' impressions</p>
 
-        </div>
-            <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h2 class="card-title"></h2>
-            <h3 class="card-subtitle mb-2 text-body-secondary">Écran</h3><i class="fa-sharp fa-light fa-buildings"></i>
-            <p class="card-text">Nous distribuons tout type d’écran : interactif, médical , incurvé etc …</p>
+                            </div>
+                                        <div class="card offset-1" style="width: 18rem;">
+                                            <div class="card-body">
+                                                <h2 class="card-title"></h2>
+                                                <i class="fa-regular fa-comment-dots"></i>
+                                                <h3 class="card-subtitle mb-2 text-body-secondary">Devis - Conseil</h3>
+                                                <p class="card-text">N’hesitez pas à nous contactez afin d’obtenir conseilet un devis adapté à votre situation</p>
 
-        </div>
-                <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h2 class="card-title"></h2><i class="fa-light fa-globe"></i>
-            <h3 class="card-subtitle mb-2 text-body-secondary">Imprimante</h3>
-            <p class="card-text">Nous avons au catalogue divers périphériques d' impressions</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="title1">Nos<br>Services</h1>
 
-        </div>
-                    <div class="card" style="width: 18rem;">
+                    <p>Soucieux de vous accompagner dans la totalité de vos démarches, nous proposons une offre de
+                        service complète
+                        :</p>
+
+                <div class="cards offset-1 ">
+                    <div class="card offset-1" style="width: 18rem;">
                         <div class="card-body">
-                            <h2 class="card-title"></h2><i class="fa-light fa-globe"></i>
-                            <h3 class="card-subtitle mb-2 text-body-secondary">Devis - Conseil</h3>
-                            <p class="card-text">N’hesitez pas à nous contactez afin d’obtenir conseilet un devis adapté à votre situation</p>
+                            <h2 class="card-title"></h2>
+                            <i class="fa-solid fa-network-wired"></i>
+                            <h3 class="card-subtitle mb-2 text-body-secondary">Réseaux</h3>
+                            <p class="card-text">Mise en place d'infrastructure réseaux : switch, routeur, firewall</p>
 
+                        </div>
+                        <div class="card offset-10" style="width: 18rem;">
+                            <div class="card-body">
+                                <i class="fa-light fa-globe"></i>
+                                <h2 class="card-title"></h2>
+                                <h3 class="card-subtitle mb-2 text-body-secondary">Systèmes</h3>
+                                <p class="card-text">Installation système et service associé : sauvegarde, stockage,
+                                    serveur,
+                                    virtualisation</p>
+
+                            </div>
+                            <div class="card offset-10" style="width: 18rem;">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                    <h2 class="card-title"></h2>
+                                    <h3 class="card-subtitle mb-2 text-body-secondary">Customisation</h3>
+                                    <p class="card-text">Etudes et réalisation de projets complexes</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-    </div>
-
-
-
-{% endblock %}
+                    {% endblock %}
