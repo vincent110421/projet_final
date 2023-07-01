@@ -1,15 +1,9 @@
-.card{
-    display: flex;
-    flex-wrap: wrap;
-    height: 200px;
-    justify-content: space-between;
-    border-color: red;
-}
 
-@media screen and (min-width: 383px){
-    .card
-}
+img{
+    height: 400px;
+    background-size: cover;
 
+}
 
 .navbar-brand {
 
@@ -18,27 +12,6 @@
 .nav-link{
 
     color: white;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #2A4999;
-
-}
-
-
-.img-fluid{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.img{
-    height: 600px;
-    background-image: url("../images/bannieres.jpg");
-    background-size: cover;
-
 }
 
 h1{
@@ -51,19 +24,9 @@ p{
     text-align: center;
 }
 
-
-
-
-h3.card-subtitle{
-    text-align: center;
-    
+i{
+    color: #2A4999;
 }
 
-h2.card-subtitle{
-    text-align: center;
-}
 
-.card-text{
-    text-align: center;
-}
 
