@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
- {% block title %}Hello MainController!{% endblock %}
+ {% block title %}Hello{% endblock %}
 
 {% block body %}
 
@@ -9,151 +9,210 @@
         <img src="{{ asset('../images/images.jpg') }}" class="card-img" alt="...">
         <div class="card-img-overlay">
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                <h5 class="card-title">Au service de vos transformations numériques</h5>
+                <h5 class="card-title fw-bold">Au service de vos transformations numériques</h5>
                 <p class="card-text">Lebosq Networks dispose de compétences pluridisciplinaires afin de vous accompagner
                     dans vos futurs besoins</p>
 
             </div>
         </div>
     </div>
-    <h1>Matériels</h1>
+    <h4>Matériels</h4>
 
     <p>Nous proposons une large gamme de matériels dans différents domaines : infrastructure, réseaux, poste de travail,
         serveurs, NAS,SAN</p>
-<div class="container-fluid">
-    <div class="d-flex justify-content-center"></div>
-    <div class="row">
-        <div class="col-12 col-lg-8">
-            <div class="card">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-globe  fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">Commutateur Routeur</h3>
-                    <p class="card-text">Nous fournissons des matériels réseaux de toutes marques afin de satisfaire
-                        tous les budgets.</p>
-                </div>
-            </div>
-        </div>
 
 
-        <div class="col-12 col-lg-8">
-            <div class="card">
-                <div class="card-body text-center">
-                    <i class="fa-regular fa-building fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">Infrastructure</h3>
-                    <p class="card-text justify-content-center">Solution de stockage, de sauvegarde, de serveurs ... Ici
-                        nous proposons des systèmes adaptés à vos problématiques</p>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-8">
-            <div class="card">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-display mb-2 fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">Écran</h3>
-                    <p class="card-text">Nous distribuons tout type d’écran : interactif, médical , incurvé etc …</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-sm-6 col-md-4">
-                <div class="card col-md-4">
-                    <div class="card-body text-center">
-                        <i class="fa-solid fa-print mb-2 fa-2x"></i>
-                        <h3 class="card-subtitle  text-body-secondary">Imprimante</h3>
-                        <p class="card-text">Nous avons au catalogue divers périphériques d' impressions</p>
+    <div class="container-fluid">
+        <ul class="cards ">
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="{{ asset('images/digitization-gfeef46f00_640.jpg') }}"></div>
+                    <div class="card_content">
+                        <h2 class="card_title text-center"><b>Commutateurs reseaux</b></h2>
+                        <div class="m-4" style="border: 1px solid black;"></div>
+                        <p class="card_text text-center">Nous fournissons des materiels reseaux de toutes marques afin de satisfaires tous les budgets</p>
                     </div>
                 </div>
-            </div>
-
-
-        <div class="col-sm-6 col-md-4">
-            <div class="card col-md-4">
-                <div class="card-body text-center">
-                    <i class="fa-regular fa-comment-dots mb-2 fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">Devis - Conseil</h3>
-                    <p class="card-text">N’hesitez pas à nous contactez afin d’obtenir conseil et un devis adapté à votre
-                        situation</p>
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="{{ asset('images/skyscrapers-geef12e470_640.jpg') }}"></div>
+                    <div class="card_content">
+                        <h2 class="card_title text-center"><b>Infrastructure</b></h2>
+                        <hr>
+                        <p class="card_text text-center">Solution de stockage, de sauvegarde, de serveurs ... Ici nous proposons des systèmes adaptés à vos problématiques</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="{{ asset('images/blockchain-g964a916d4_640.jpg') }}"></div>
+                    <div class="card_content">
+                        <h2 class="card_title text-center"><b>Écran</b></h2>
+                        <hr>
+                        <p class="card_text text-center">Nous distribuons tout type d’écran : interactif, médical , incurvé etc …</p>
+                    </div>
+                </div>
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="{{ asset('images/digitization-g6df9cd6cc_640.jpg') }}"></div>
+                    <div class="card_content">
+                        <h2 class="card_title text-center"><b>Imprimante</b></h2>
+                        <hr>
+                        <p class="card_text text-center">Nous avons au catalogue divers périphériques d' impressions</p>
+                    </div>
+                </div>
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img src="{{ asset('images/telephone-g87f24b5ff_640.jpg') }}"></div>
+                    <div class="card_content">
+                        <h2 class="card_title text-center"><b>Devis - Conseil</b></h2>
+                        <hr>
+                        <p class="card_text text-center">N’hesitez pas à nous contactez afin d’obtenir conseilet un devis adapté à votre situation</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
-</div>
 
+
+
+{#<div class="container-fluid">#}
+{#    <div class="d-flex justify-content-center align-items-center">#}
+{#    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">#}
+{#        <div class="">#}
+{#            <div class="card col">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-solid fa-globe  fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">Commutateur Routeur</h3>#}
+{#                    <p class="card-text">Nous fournissons des matériels réseaux de toutes marques afin de satisfaire#}
+{#                        tous les budgets.</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+
+
+{#        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">#}
+{#            <div class="card col">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-regular fa-building fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">Infrastructure</h3>#}
+{#                    <p class="card-text justify-content-center">Solution de stockage, de sauvegarde, de serveurs ... Ici#}
+{#                        nous proposons des systèmes adaptés à vos problématiques</p>#}
+
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">#}
+{#            <div class="card col">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-solid fa-display mb-2 fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">Écran</h3>#}
+{#                    <p class="card-text">Nous distribuons tout type d’écran : interactif, médical , incurvé etc …</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+
+
+{#        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">#}
+{#                <div class="card">#}
+{#                    <div class="card-body text-center">#}
+{#                        <i class="fa-solid fa-print mb-2 fa-2x"></i>#}
+{#                        <h3 class="card-subtitle  text-body-secondary">Imprimante</h3>#}
+{#                        <p class="card-text">Nous avons au catalogue divers périphériques d' impressions</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+
+{#        <div class="col-sm-6 col-md-4">#}
+{#            <div class="card col-md-4">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-regular fa-comment-dots mb-2 fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">Devis - Conseil</h3>#}
+{#                    <p class="card-text">N’hesitez pas à nous contactez afin d’obtenir conseil et un devis adapté à votre#}
+{#                        situation</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#</div>#}
     <h1>Nos<br>Services</h1>
 
     <p>Soucieux de vous accompagner dans la totalité de vos démarches, nous proposons une offre de
         service complète :</p>
 
 
-    <div class="row">
-        <div class="col-sm-6 col-md-4">
-            <div class="card col-md-4">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-network-wired mb-2 fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">Réseaux</h3>
-                    <p class="card-text">Mise en place d'infrastructure réseaux : switch, routeur, firewall</p>
-                </div>
-            </div>
-        </div>
+{#    <div class="row">#}
+{#        <div class="col-sm-6 col-md-4">#}
+{#            <div class="card col-md-4">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-solid fa-network-wired mb-2 fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">Réseaux</h3>#}
+{#                    <p class="card-text">Mise en place d'infrastructure réseaux : switch, routeur, firewall</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
 
 
-        <div class="col-sm-6 col-md-4">
-            <div class="card col-md-4">
-                <div class="card-body text-center">
-                    <i class="fa-regular fa-floppy-disk mb-2 fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">Systèmes</h3>
-                    <p class="card-text">Installation système et service associé : sauvegarde, stockage, serveur,
-                        virtualisation</p>
-                </div>
-            </div>
-        </div>
+{#        <div class="col-sm-6 col-md-4">#}
+{#            <div class="card col-md-4">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-regular fa-floppy-disk mb-2 fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">Systèmes</h3>#}
+{#                    <p class="card-text">Installation système et service associé : sauvegarde, stockage, serveur,#}
+{#                        virtualisation</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
 
 
-        <div class="col-sm-6 col-md-4">
-            <div class="card col-md-4">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-user-gear mb-2 fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">Customisation</h3>
-                    <p class="card-text">Etudes et réalisation de projets complexes</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-md-4">
-            <div class="card col-md-4">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-lock mb-2 fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">Sécurité</h3>
-                    <p class="card-text">Sauvegarde , antivirus, EDR etc ..</p>
-                </div>
-            </div>
-        </div>
+{#        <div class="col-sm-6 col-md-4">#}
+{#            <div class="card col-md-4">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-solid fa-user-gear mb-2 fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">Customisation</h3>#}
+{#                    <p class="card-text">Etudes et réalisation de projets complexes</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col-sm-6 col-md-4">#}
+{#            <div class="card col-md-4">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-solid fa-lock mb-2 fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">Sécurité</h3>#}
+{#                    <p class="card-text">Sauvegarde , antivirus, EDR etc ..</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
 
 
-        <div class="col-sm-6 col-md-4">
-            <div class="card col-md-4">
-                <div class="card-body text-center">
-                    <i class="fa-brands fa-windows mb-2 fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">Gestion de parc</h3>
-                    <p class="card-text">Gestion de parc informatique / inventaire, conformité ...</p>
-                </div>
-            </div>
-        </div>
+{#        <div class="col-sm-6 col-md-4">#}
+{#            <div class="card col-md-4">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-brands fa-windows mb-2 fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">Gestion de parc</h3>#}
+{#                    <p class="card-text">Gestion de parc informatique / inventaire, conformité ...</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
 
-        <div class="col-sm-6 col-md-4">
-            <div class="card col-md-4">
-                <div class="card-body text-center">
-                    <i class="fa-solid fa-phone-volume mb-2 fa-2x"></i>
-                    <h3 class="card-subtitle text-body-secondary">TOIP - TELECOM</h3>
-                    <p class="card-text">Mise en place de matériel téléphonique et périphériques vidéos/audio - fibre
-                        optique dédiée</p>
-                </div>
-            </div>
-        </div>
-    </div>
+{#        <div class="col-sm-6 col-md-4">#}
+{#            <div class="card col-md-4">#}
+{#                <div class="card-body text-center">#}
+{#                    <i class="fa-solid fa-phone-volume mb-2 fa-2x"></i>#}
+{#                    <h3 class="card-subtitle text-body-secondary">TOIP - TELECOM</h3>#}
+{#                    <p class="card-text">Mise en place de matériel téléphonique et périphériques vidéos/audio - fibre#}
+{#                        optique dédiée</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
 
 
     <h1>Rubrique Articles</h1>
