@@ -17,10 +17,17 @@ class MainController extends AbstractController
     }
 
     #[Route('/service', name: 'main_service')]
-    public function contact(): Response
+    public function service(): Response
     {
 
         // Cette page appellera la vue templates/main/service.html.twig
         return $this->render('main/service.html.twig');
+    }
+    #[Route('/articles', name: 'main_articles')]
+    public function articles(): Response
+    {
+
+        // Cette page appellera la vue templates/main/service.html.twig
+        return $this->render('main/articles.html.twig');
     }
 }
