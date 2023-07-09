@@ -16,11 +16,11 @@
                     <a class="nav-link text-center mx-3{{ route == 'main_service' ? ' active' }}" href="{{ path('main_service') }}">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  text-center mx-3 {{ route == 'main_articles' ? 'active' }} "
-                       href="{{ path('main_articles') }}">Articles</a>
+                    <a class="nav-link  text-center mx-3 {{ route == 'main_formation' ? 'active' }} "
+                       href="{{ path('main_formation') }}">Formations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center mx-3" href="#">
+                    <a class="nav-link text-center mx-3 {{ route == 'main_contact' ? 'active' }} " href="{{ path('main_contact') }}">
                         Contact
                     </a>
                 </li>
@@ -38,8 +38,8 @@
 
             </ul>
             <form class="d-flex">
-                <input name="s" class="form-control me-2 " type="search" placeholder="Trouver un article" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                <input name="s" class="form-control me-2 h-50 mt-3" type="search" placeholder="Trouver un article" aria-label="Search">
+                <button class="btn bg-light m-3" type="submit"><i class="fas fa-search"></i></button>
             </form>
 
         </div>

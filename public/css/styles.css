@@ -156,4 +156,286 @@ i{
 }
 
 
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+h1, h2, h3 {
+    margin: 0;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Styles spécifiques à la section des produits */
+/*#featured-products {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+/*    grid-gap: 20px;*/
+/*}*/
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+
+/* Styles du pied de page */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+textarea {
+    display: block;
+    border: 1px solid #BBB;
+    color: #444;
+    font-size: 110%;
+}
+
+button {
+    margin-top: 10px;
+}
+.cardss, .carde{
+    width: 500px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+}
+.carde:hover .card-inner {
+    transform: rotateY(180deg);
+}
+.cardss:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color:    white  ;
+    color: #2A4999;
+    display: flex;
+    align-items: center;
+    border: 10px solid    #d52121  ;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    background-color:   white ;
+    color: #2A4999;
+    display: flex;
+    align-items: center;
+    border: 10px solid   #d52121  ;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(180deg);
+}
+
+
+h6{
+    padding: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #2A4999;
+}
+.text{
+    color:white;
+}
+.technique{
+    height:300px;
+    width: 4000px;
+    background-color: #299059;
+}
+.bureautique{
+    height:300px;
+    width: 4000px;
+    background-color:  #1766e9 ;
+}
+
+
+
+.page {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 300px;
+    font-family: cursive;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #fff;
+    background-image: linear-gradient(#f5f5f0 1.1rem, #ccc 1.2rem);
+    background-size: 100% 1.2rem;
+    line-height: 1.2rem;
+    padding: 1.4rem 0.5rem 0.3rem 4.5rem;
+}
+
+.page::before,
+.page::after {
+    position: absolute;
+    content: "";
+    bottom: 10px;
+    width: 40%;
+    height: 10px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.page::before {
+    left: 15px;
+    transform: skew(-5deg) rotate(-5deg);
+}
+
+.page::after {
+    right: 15px;
+    transform: skew(5deg) rotate(5deg);
+}
+
+.page:hover::before,
+.page:hover::after {
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.margin {
+    position: absolute;
+    border-left: 1px solid #d88;
+    height: 100%;
+    left: 3.3rem;
+    top: 0;
+}
+
+.page p {
+    margin: 0;
+    text-indent: 1rem;
+    padding-bottom: 1.2rem;
+    color: black;
+    line-height: 20px;
+}
+
+.formation{
+    padding-top: 100px;
+}
+
+.list{
+    list-style: inside;
+    text-align: center;
+}
+
+.puce{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+.word{
+    color: #1766e9;
+}
+
+.excel{
+    color: #299059;
+}
+.powerpoint{
+    color:   #cf3e15 ;
+}
+.cardes{
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+/*img {*/
+/*    max-width: 100%;*/
+/*    height: auto;*/
+/*    display: block;*/
+/*}*/
+
+/*.picture1{*/
+/*    background-attachment: fixed;*/
+/*}*/
+
+.picture1{
+
+    height: 292px;
+    width: 400px;
+    margin: 30px;
+}
+/*@media (max-width: 768px) {*/
+/*    .container img {*/
+/*        margin: 0 5px;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 480px) {*/
+/*    .container {*/
+/*        flex-direction: column;*/
+/*        align-items: center;*/
+/*    }}*/
