@@ -8,43 +8,37 @@
 
 {% block body %}
 
-  <title>Formulaire de contact</title>
+{{ form_start(form)  }}
 
-  <h1>Formulaire de contact</h1>
 
-  <form action="#" method="POST">
 
-      <!-- Name input -->
-      <div class="form-outline mb-4">
-        <input type="text" id="form4Example1" class="form-control" />
-        <label class="form-label" for="form4Example1">Name</label>
-      </div>
+{#    Affichage des erreurs générales du formulaire #}
+    {{ form_errors(form) }}
 
-      <!-- Email input -->
-      <div class="form-outline mb-4">
-        <input type="email" id="form4Example2" class="form-control" />
-        <label class="form-label" for="form4Example2">Email address</label>
-      </div>
+{#     Champ email #}
+    {{ form_row(form.email) }}
 
-      <!-- Message input -->
-      <div class="form-outline mb-4">
-        <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-        <label class="form-label" for="form4Example3">Message</label>
-      </div>
+{#     Champ nom #}
+    {{ form_row(form.name) }}
 
-      <!-- Checkbox -->
-      <div class="form-check d-flex justify-content-center mb-4">
-        <input class="form-check-input me-2" type="checkbox" value="" id="form4Example4" checked />
-        <label class="form-check-label" for="form4Example4">
-          Send me a copy of this message
-        </label>
-      </div>
+{#     Champ prénom #}
+    {{ form_row(form.firstname) }}
 
-      <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-4">
-        Send
-      </button>
-    </form>
+{#     Champ sujet #}
+    {{ form_row(form.subject) }}
+
+{#     Champ message #}
+    {{ form_row(form.message) }}
+
+
+
+    {{ form_row(form.save) }}
+
+
+
+
+
 
 {% endblock %}
+
 

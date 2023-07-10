@@ -31,11 +31,4 @@ class MainController extends AbstractController
         return $this->render('main/formation.html.twig');
     }
 
-    #[Route('/contact', name: 'main_contact')]
-    public function contact(): Response
-    {
-
-        // Cette page appellera la vue templates/main/service.html.twig
-        return $this->render('main/contact.html.twig');
-    }
 }
