@@ -4,18 +4,21 @@ namespace App\Controller;
 
 use App\Form\ContactFormType;
 use App\Repository\ContactRepository;
+use ReCaptcha\ReCaptcha;
+use App\Recaptcha\RecaptchaValidator;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'main_contact')]
-    public function index(Request $request, ContactRepository $contactRepository, MailerInterface $mailer): Response
+    public function index(Request $request, ContactRepository $contactRepository, MailerInterface $mailer, RecaptchaValidator $recaptcha, ): Response
     {
         $form = $this->createForm(ContactFormType::class);
         $form->handleRequest($request);
@@ -23,10 +26,24 @@ class ContactController extends AbstractController
 
 
         // si le formulaire a été envoyé
-        if($form->isSubmitted()&& $form->isValid()){
+        if ($form->isSubmitted() ) {
+
+            // Récupération valeur du captcha
+            $captchaResponse = $request->request->get('g-recaptcha-response', null);
+
+            // Récupération adresse IP
+            $ip = $request->server->get('REMOTE_ADRR');
+
+            // Si le captcha contient "null" ou n'est pas valide, on ajoute une erreur dans le formulaire
+
+            if ($captchaResponse == null || !$recaptcha->verify($captchaResponse, $ip)) {
+                $form->addError(new FormError('Veuillez remplir le captcha de sécurité'));
+            }
 
             // Si le formulaire est valide
+            if($form->isValid()){
 
+            }
 
             // On prépare un email
             $mail = (new TemplatedEmail())

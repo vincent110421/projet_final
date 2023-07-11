@@ -1,44 +1,50 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block title %}Contact{% endblock %}
 
-
-
 {% block body %}
+    {#  Grille Bootstrap  #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-4 mx-auto">
+                {{ form_start(form) }}
 
-{{ form_start(form)  }}
+                {#    Affichage des erreurs générales du formulaire #}
+                {{ form_errors(form) }}
 
+                {#     Champ email #}
+                {{ form_row(form.email) }}
 
+                {#     Champ nom #}
+                {{ form_row(form.name) }}
 
-{#    Affichage des erreurs générales du formulaire #}
-    {{ form_errors(form) }}
+                {#     Champ prénom #}
+                {{ form_row(form.firstname) }}
 
-{#     Champ email #}
-    {{ form_row(form.email) }}
-
-{#     Champ nom #}
-    {{ form_row(form.name) }}
-
-{#     Champ prénom #}
-    {{ form_row(form.firstname) }}
-
-{#     Champ sujet #}
-    {{ form_row(form.subject) }}
-
-{#     Champ message #}
-    {{ form_row(form.message) }}
+                {#     Champ sujet #}
+                {{ form_row(form.subject) }}
 
 
+                {#     Champ message #}
+                {{ form_row(form.message) }}
 
-    {{ form_row(form.save) }}
+                {{ form_row(form.save) }}
 
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="{{ google_recaptcha_site_key }}"></div>
+                </div>
 
+                {# Fermeture du formulaire #}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
 
-
+{% endblock %}
+{% block stylesheets %}
+    {# Insertion du fichier JS dans le block stylesheets, ce n'est pas une erreur, la documentation de Recaptcha préconise en effet d'intégrer ce fichier JS dans le head #}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
 {% endblock %}
-
 

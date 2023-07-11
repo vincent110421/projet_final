@@ -138,7 +138,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/clock" />
       <path value="$PROJECT_DIR$/vendor/symfony/doctrine-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
-      <path value="$PROJECT_DIR$/vendor/karser/karser-recaptcha3-bundle" />
       <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
     </include_path>
   </component>
