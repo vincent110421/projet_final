@@ -101,7 +101,7 @@ class ContactFormType extends AbstractType
             ])
             // Bouton de validation
             ->add('save', SubmitType::class,[
-                'label'=> 'Créer un compte',
+                'label'=> 'Envoyé',
                 'attr' => [
                     'class'=> 'btn btn-outline-primary w-100',
                     ]

@@ -25,14 +25,14 @@
                     </a>
                 </li>
                 <li class="nav-item navbar-right">
-                    <a class="nav-link text-center mx-3" href="#">
-                        Connexion
+                    <a class="nav-link text-center mx-3  {{ route == 'app_login' ? 'active' }}" href="{{ path('app_login') }}">
+                        <i class="fa-solid fa-right-to-bracket mx-1 "></i>Connexion
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-center mx-3" href="#">
-                        Inscription
+                    <a class="nav-link text-center mx-3 pt-3 {{ route == 'app_register' ? 'active' }}" href="{{ path('main_register') }}">
+                        <i class="fa-solid fa-user-plus mx-1 "></i>Inscription
                     </a>
                 </li>
 
