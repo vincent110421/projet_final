@@ -19,23 +19,21 @@
             <div class="col-12 col-md-4 mx-auto">
                 {{ form(registrationForm) }}
 
+                {# Recaptchav2 #}
                 <div class="form-group">
                     <div class="g-recaptcha" data-sitekey="{{ google_recaptcha_site_key }}"></div>
                 </div>
-
-
             </div>
         </div>
-
     </div>
 
 
 {% endblock %}
 
 {% block css %}
+
     {# Insertion du fichier JS dans le block stylesheets, ce n'est pas une erreur, la documentation de Recaptcha préconise en effet d'intégrer ce fichier JS dans le head #}
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 
 {% endblock %}
 
