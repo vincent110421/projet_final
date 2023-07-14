@@ -48,7 +48,7 @@ class ContactController extends AbstractController
             // On prépare un email
             $mail = (new TemplatedEmail())
                 ->from($form->get('email')->getData())
-                ->to('')
+                ->to('contact@imdadtaieb.com')
                 ->replyTo($form->get('email')->getData())
 
 
@@ -58,7 +58,7 @@ class ContactController extends AbstractController
                 ->context([ // Envois des éléments à notre vue
                     'firstname' => $form->get('firstname')->getData(),
 
-                    'lastname' => $form->get('lastname')->getData(),
+                    'name' => $form->get('name')->getData(),
 
                     'mail' => $form->get('email')->getData(),
 
@@ -68,8 +68,6 @@ class ContactController extends AbstractController
 
 
                 ])
-
-
 
             ;
 

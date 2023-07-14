@@ -617,3 +617,7 @@ th, td {
     right: 0;
     width: 0;
 }
+
+.sessions{
+    padding: 50px;
+}

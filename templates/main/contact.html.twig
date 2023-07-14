@@ -28,11 +28,13 @@
                 {#     Champ message #}
                 {{ form_row(form.message) }}
 
-                {{ form_row(form.save) }}
 
                 <div class="form-group">
                     <div class="g-recaptcha" data-sitekey="{{ google_recaptcha_site_key }}"></div>
                 </div>
+
+                {{ form_row(form.save) }}
+
 
                 {# Fermeture du formulaire #}
                 {{ form_end(form) }}

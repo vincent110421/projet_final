@@ -30,6 +30,7 @@
                     <a class="nav-link  text-center mx-3 {{ route == 'main_formation' ? 'active' }} "
                        href="{{ path('main_formation') }}">Formations</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-center mx-3 {{ route == 'main_contact' ? 'active' }} "
                        href="{{ path('main_contact') }}">
@@ -43,6 +44,11 @@
 
                 {# Affichage des liens réservés aux utilisateurs connectés (et ceux pour les personnes déconnectées dans "else") #}
                 {% if app.user %}
+
+                    <li class="nav-item">
+                        <a class="nav-link  text-center m-auto {{ route == 'main_session' ? 'active' }} "
+                           href="{{ path('main_session') }}">Sessions</a>
+                    </li>
 
                     <li class="nav-item dropdown">
 
@@ -84,12 +90,7 @@
                 {% endif %}
 
             </ul>
-            {# Formulaire de recherche #}
-            <form class="d-flex">
-                <input name="s" class="form-control me-2 h-50 mt-3" type="search" placeholder="Trouver un article"
-                       aria-label="Search">
-                <button class="btn bg-light m-3" type="submit"><i class="fas fa-search"></i></button>
-            </form>
+
 
         </div>
 
