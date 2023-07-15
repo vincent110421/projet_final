@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HomeBanner index{% endblock %}
+
+{% block body %}
+    <h1>HomeBanner index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Banner</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>activation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for home_banner in home_banners %}
+            <tr>
+                <td>{{ home_banner.id }}</td>
+                <td><img src="{{ asset('images/banniere/'~home_banner.banner) }}" style="height: 15vh" alt=""></td>
+                <td>{{ home_banner.title }}</td>
+                <td>{{ home_banner.content }}</td>
+                <td>
+                    <label class="form-switch mt-2 p-3">
+                        <input type="checkbox" {{ (home_banner.isActive) ? 'checked' : '' }}
+                               data-id="{{ home_banner.id }}">
+                        <span class="form-slider"></span>
+                    </label>
+                </td>
+                <td>
+                    <a href="{{ path('app_home_banner_show', {'id': home_banner.id}) }}">show</a>
+                    <a href="{{ path('app_home_banner_edit', {'id': home_banner.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('app_home_banner_new') }}">Ajouter</a>
+{% endblock %}
+
+{% block js %}
+    <script src="{{ asset('js/activationbanner.js') }}" ></script>
+{% endblock %}
+

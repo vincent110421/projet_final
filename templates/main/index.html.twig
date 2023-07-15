@@ -4,18 +4,30 @@
 
 {% block body %}
 
+    {% if banner %}
+
 
     <div class="card-img text-bg-dark">
-        <img src="{{ asset('/images/images.jpg') }}" class="card-img" alt="...">
+        <img src="{{ asset('/images/banniere/'~banner.banner) }}" class="card-img" alt="...">
 {#        <div class="card-img-overlay">#}
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                <h1 class="card-title fw-bold fs-2">Au service de vos transformations numériques</h1>
-                <p class="card-text fs-5">Lebosq Networks dispose de compétences pluridisciplinaires afin de vous accompagner
-                    dans vos futurs besoins</p>
-
+                {# Si il y a une couleur pour le titre on affiche la couleur du titre, sinon on affichera "le titre en blanc" par défault #}
+                <h1 style="color:{{ banner.titleColor ? banner.titleColor : 'white' }}" class="card-title fw-bold fs-2">{{ banner.title }}</h1>
+                <p style="color:{{ banner.contentColor ? banner.contentColor : 'white' }}" class="card-text fs-5">{{ banner.content }}</p>
             </div>
         </div>
+{% else %}
+    <div class="card-img text-bg-dark">
+        <img src="{{ asset('/images/images.jpg') }}" class="card-img" alt="...">
+                <div class="card-img-overlay">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h1 class="card-title fw-bold fs-2">Au service de vos transformations numériques</h1>
+            <p class="card-text fs-5">Lebosq Networks dispose de compétences pluridisciplinaires afin de vous accompagner
+                dans vos futurs besoins</p>
 
+        </div>
+    </div>
+{% endif %}
 
     <h4>Nos<br>Matériels</h4>
 

@@ -17,12 +17,21 @@
         {# Formulaire d'inscription #}
         <div class="row">
             <div class="col-12 col-md-4 mx-auto">
-                {{ form(registrationForm) }}
+                {{ form_start(registrationForm) }}
+                {{ form_errors(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+
+                {{ form_row(registrationForm.plainPassword) }}
 
                 {# Recaptchav2 #}
                 <div class="form-group">
                     <div class="g-recaptcha" data-sitekey="{{ google_recaptcha_site_key }}"></div>
                 </div>
+                {{ form_row(registrationForm.save) }}
+
+                {{ form_end(registrationForm) }}
+
+
             </div>
         </div>
     </div>
