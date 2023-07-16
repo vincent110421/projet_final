@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
@@ -20,6 +21,37 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            // Champ prénom
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom*',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Merci de renseigner un prénom',
+                    ]),
+                    new Length([
+                        'min' => 2,
+                        'max' => 255,
+                        'minMessage' => 'Le prénom doit contenir au moins {{ limit }} caractères',
+                        'maxMessage' => 'Le prénom doit contenir au maximum {{ limit }} caractères',
+                    ]),
+                ],
+            ])
+
+            // Champ nom de famille
+            ->add('lastname', TextType::class, [
+                'label' => 'Nom*',
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Merci de renseigner un nom',
+                    ]),
+                    new Length([
+                        'min' => 2,
+                        'max' => 255,
+                        'minMessage' => 'Le nom de famille doit contenir au moins {{ limit }} caractères',
+                        'maxMessage' => 'Le nom de famille doit contenir au maximum {{ limit }} caractères',
+                    ]),
+                ],
+            ])
             // Champ Email
             ->add('email', EmailType::class, [
                 'label' => 'Adresse Email',

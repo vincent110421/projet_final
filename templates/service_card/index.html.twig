@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ServiceCard index{% endblock %}
+
+{% block body %}
+    <h1>ServiceCard index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>TitleColor</th>
+                <th>ContentColor</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for service_card in service_cards %}
+            <tr>
+                <td>{{ service_card.id }}</td>
+                <td>{{ service_card.title }}</td>
+                <td>{{ service_card.content }}</td>
+                <td>{{ service_card.titleColor }}</td>
+                <td>{{ service_card.contentColor }}</td>
+                <td>
+                    <a href="{{ path('app_service_card_show', {'id': service_card.id}) }}">show</a>
+                    <a href="{{ path('app_service_card_edit', {'id': service_card.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('app_service_card_new') }}">Ajouter</a>
+{% endblock %}

@@ -31,6 +31,13 @@
                        href="{{ path('main_formation') }}">Formations</a>
                 </li>
 
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link  text-center m-auto {{ route == 'main_session' ? 'active' }} "
+                           href="{{ path('main_session') }}">Sessions</a>
+                    </li>
+                {% endif %}
+
                 <li class="nav-item">
                     <a class="nav-link text-center mx-3 {{ route == 'main_contact' ? 'active' }} "
                        href="{{ path('main_contact') }}">
@@ -45,30 +52,64 @@
                 {# Affichage des liens réservés aux utilisateurs connectés (et ceux pour les personnes déconnectées dans "else") #}
                 {% if app.user %}
 
-                    <li class="nav-item">
-                        <a class="nav-link  text-center m-auto {{ route == 'main_session' ? 'active' }} "
-                           href="{{ path('main_session') }}">Sessions</a>
-                    </li>
+                    <div class="d-flex">
+                        <div class="dropdown ml-auto" id="example-dropdown" data-ax="dropdown">
+                            <a class="dropdown-toggle" data-target="example-dropdown">
+                               <span class="mr-2 d-none d-lg-inline fw-bold text-white">
+                               {{ app.user.lastname }} {{ app.user.firstname }}
+                            </span>
+                                {% if app.user.roles == 'ROLE_ADMIN' %}
+                                    <img src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" class="rounded-circle" alt="Image de profil" style="height: 5vh;width: 5vh">
 
-                    <li class="nav-item dropdown">
+                                {% else %}
+                                    <img src="https://st4.depositphotos.com/12837522/39267/v/450/depositphotos_392673324-stock-illustration-teacher-tutor-blue-circle-internet.jpg
+                                        " class="rounded-circle" alt="Image de profil" style="height: 5vh;width: 5vh">
+                                {% endif %}
 
-                        {# Texte du bouton du menu déroulant #}
-                        <a class="nav-link dropdown-toggle text-light" href="#" id="profil-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user mx-1 bg-black"></i>
-                        </a>
+                            </a>
 
-                        {# Liste des liens du menu déroulant #}
-                        <div class="dropdown-menu" aria-labelledby="profil-dropdown">
+                            <div class="dropdown-content white dropdown-right shadow-1 rounded-1">
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class="dropdown-item" href="{{ path('app_home_banner_index') }}">Banniere Accueil</a>
+                                    <a class="dropdown-item" href="{{ path('app_service_card_index') }}">Page Service</a>
 
-                            {# Séparateur #}
-                            <div class="dropdown-divider"></div>
+                                {% endif %}
 
-                            {# Lien de la page de déconnexion #}
-                            <a class="dropdown-item text-danger" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt me-1"></i>Déconnexion</a>
+                                <a class="dropdown-item" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt me-1"></i>Déconnexion</a>
 
+                            </div>
                         </div>
+                    </div>
 
-                    </li>
+{#                  <div class="dropdown me-5">#}
+{#                        <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">#}
+{#                            {{ app.user.email }}#}
+{#                        </a>#}
+{#                        <ul class="dropdown-menu">#}
+{#                            <li><a class="dropdown-item text-danger" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt me-1"></i>Déconnexion</a></li>#}
+{#                            <li><button class="dropdown-item" type="button">Another action</button></li>#}
+{#                            <li><button class="dropdown-item" type="button">Something else here</button></li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                    <li class="nav-item dropdown me-5">#}
+
+{#                         Texte du bouton du menu déroulant #}
+{#                        <a class="nav-link dropdown-toggle text-light" href="#" id="profil-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                            <i class="fas fa-user mx-1 bg-black"></i>#}
+{#                        </a>#}
+
+{#                         Liste des liens du menu déroulant #}
+{#                        <div class="dropdown-menu" aria-labelledby="profil-dropdown">#}
+
+{#                             Séparateur #}
+{#                            <div class="dropdown-divider"></div>#}
+
+{#                             Lien de la page de déconnexion #}
+
+
+{#                        </div>#}
+
+{#                    </li>#}
 
                 {% else %}
                     {# Lien de la page d'inscription #}

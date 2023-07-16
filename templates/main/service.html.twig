@@ -24,10 +24,37 @@
 
 
 
+    {% if card %}
+
+
+        <div class="container">
+            <div class="row">
+                {% for c in card %}
+                    <div class="col-md-4 col-lg-3 mx-auto">
+                        <div class="cards my-3 w-100">
+                            <div class="face back">
+                                <div class="content">
+                                    <span class="stars"></span>
+                                    <div class="text-center">
+                                        <b class="desc"><i class="fa-regular fa-floppy-disk fa-3x"></i></b></div>
+                                    <p class="desc" style="color: {{ c.contentColor ? c.contentColor : '#2A4999' }}">
+                                        {{ c.content }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="face front text-center">
+                                <b style="color: {{ c.titleColor ? c.titleColor : '#2A4999' }}">{{ c.title }}</b>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
     <div class="container">
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <div class="cards col-lg-4 my-3 w-100">
+            <div class="col-md-4 col-lg-3 mx-auto">
+                <div class="cards  my-3 w-100">
                     <div class="face back">
                         <div class="content">
                             <span class="stars"></span>
@@ -47,8 +74,8 @@
             </div>
 
 
-            <div class="col-md-3 mx-auto">
-                <div class="cards col-lg-4 my-3 w-100">
+            <div class="col-md-4 col-lg-3 mx-auto">
+                <div class="cards  my-3 w-100">
                     <div class="face back">
                         <div class="content">
                             <span class="stars"></span>
@@ -68,8 +95,8 @@
             </div>
 
 
-            <div class="col-md-3 mx-auto">
-                <div class="cards col-lg-4 my-3 w-100">
+            <div class="col-md-4 col-lg-3 mx-auto">
+                <div class="cards my-3 w-100">
                     <div class="face back">
                         <div class="content">
                             <span class="stars"></span>
@@ -87,8 +114,8 @@
             </div>
 
 
-            <div class="col-md-3 mx-auto">
-                <div class="cards col-lg-4 my-3 w-100">
+            <div class="col-md-4 col-lg-3 mx-auto">
+                <div class="cards  my-3 w-100">
                     <div class="face back">
                         <div class="content">
                             <span class="stars"></span>
@@ -105,7 +132,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -119,8 +145,8 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <div class="cards col-lg-4 my-3 w-100">
+            <div class="col-md-4 col-lg-3 mx-auto">
+                <div class="cards  my-3 w-100">
                     <div class="face back">
                         <div class="content">
                             <span class="stars"></span>
@@ -142,8 +168,8 @@
             </div>
 
 
-            <div class="col-md-3 mx-auto">
-                <div class="cards col-lg-4 my-3 w-100">
+            <div class="col-md-4 col-lg-3 mx-auto">
+                <div class="cards my-3 w-100">
                     <div class="face back">
                         <div class="content">
                             <span class="stars"></span>
@@ -164,8 +190,8 @@
             </div>
 
 
-            <div class="col-md-3 mx-auto">
-                <div class="cards col-lg-4 my-3 w-100">
+            <div class="col-md-4 col-lg-3 mx-auto">
+                <div class="cards my-3 w-100">
                     <div class="face back">
                         <div class="content">
                             <span class="stars"></span>
@@ -185,8 +211,8 @@
             </div>
 
 
-            <div class="col-md-3 mx-auto">
-                <div class="cards col-lg-4 my-3 w-100">
+            <div class="col-md-4 col-lg-3 mx-auto">
+                <div class="cards my-3 w-100">
                     <div class="face back">
                         <div class="content">
                             <span class="stars"></span>

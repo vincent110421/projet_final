@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ServiceCard{% endblock %}
+
+{% block body %}
+    <h1>Create new ServiceCard</h1>
+
+    {{ include('service_card/_form.html.twig') }}
+
+    <a href="{{ path('app_service_card_index') }}">back to list</a>
+{% endblock %}

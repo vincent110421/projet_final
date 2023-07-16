@@ -621,3 +621,7 @@ th, td {
 .sessions{
     padding: 50px;
 }
+
+.dropdown:hover{
+    cursor: pointer;
+}

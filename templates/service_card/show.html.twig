@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ServiceCard{% endblock %}
+
+{% block body %}
+    <h1>ServiceCard</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ service_card.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ service_card.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ service_card.content }}</td>
+            </tr>
+            <tr>
+                <th>TitleColor</th>
+                <td>{{ service_card.titleColor }}</td>
+            </tr>
+            <tr>
+                <th>ContentColor</th>
+                <td>{{ service_card.contentColor }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_service_card_index') }}">back to list</a>
+
+    <a href="{{ path('app_service_card_edit', {'id': service_card.id}) }}">edit</a>
+
+    {{ include('service_card/_delete_form.html.twig') }}
+{% endblock %}
