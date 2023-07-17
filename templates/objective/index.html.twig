@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Objective index{% endblock %}
+{% block js %}
+
+    <script src="{{ asset('js/activationobjective.js') }}"></script>
+
+{% endblock %}
+
+{% block body %}
+    <h1>Objective index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Title</th>
+                <th>Content</th>
+                <th>Activation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for objective in objectives %}
+            <tr>
+
+                <td>{{ objective.title }}</td>
+                <td>{{ objective.content|purify }}</td>
+                <td>
+                    <label class="form-switch mt-2 p-3">
+                        <input type="checkbox" {{ (objective.isActive) ? 'checked' : '' }}
+                               data-id="{{ objective.id }}">
+                        <span class="form-slider"></span>
+                    </label>
+                </td>
+                <td>
+                    <a href="{{ path('app_objective_show', {'id': objective.id}) }}">show</a>
+                    <a href="{{ path('app_objective_edit', {'id': objective.id}) }}">edit</a>
+                </td>
+            </tr>
+
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_objective_new') }}">Create new</a>
+{% endblock %}

@@ -7,13 +7,18 @@
 {% block title %}Formation{% endblock %}
 {% block body %}
 
-    <h1 class="formation">Nos<br>Formations</h1><br>
+    {% if train %}
+        {% for c in train %}
+    <h1 class="formation" style="color: {{ c.titleColor ? c.titleColor : '#2A4999' }}">{{ c.title }}></h1>
 
-    <p>Lebosq Networks, c'est aussi une équipe investie dans la formation.<br>
-        Nous vous proposons deux modules pour répondre à vos besoins.
+
+
+
+    <p style="color: {{ c.contentColor ? c.contentColor : '#2A4999' }}">{{ c.content }}
 
     </p>
-
+        {% endfor %}
+{% endif %}
 
 
     <div class="row">
@@ -79,14 +84,27 @@
 
             </div>
         </div>
-        <h3 class="titre3 text-center fw-bold p-2 ">Les objectifs</h3>
-        <p class="text1"> Apprendre les outils essentiels de la bureautique avec Office, de l'utilisation du PC aux
+
+        {# Si il y a un titre on l'affiche sinon elle s'affichera par défault "Les objectifs" #}
+        {% if objective %}
+            <h3 class="titre3 text-center fw-bold p-2 ">{{ objective.title }}</h3>
+            <p class="text1">{{ objective.content|purify }}
+            </p>
+
+        {% else %}
+            <h3 class="titre3 text-center fw-bold p-2 ">Les objectifs</h3>
+            <p class="text1">Apprendre les outils essentiels de la bureautique avec Office, de l'utilisation du PC aux
             fonctions essentielles du traitement de texte Word, du tableur Excel et de PowerPoint.<br> Une formation
             essentielle quel que soit son secteur d'activité.<br>
 
             En fin de stage, vous serez capable d'utiliser les fonctionnalités essentielles des outils de bureautique
             afin d'être autonome.
-        </p>
+            </p>
+        {% endif %}
+
+
+
+
         <h3 class="titre3 text-center fw-bold p-3 ">Le programme</h3>
 
 

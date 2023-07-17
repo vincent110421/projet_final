@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SessionCard{% endblock %}
+
+{% block body %}
+    <h1>SessionCard</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ session_card.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ session_card.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ session_card.content }}</td>
+            </tr>
+            <tr>
+                <th>IsActive</th>
+                <td>{{ session_card.isActive ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>TitleColor</th>
+                <td>{{ session_card.titleColor }}</td>
+            </tr>
+            <tr>
+                <th>ContentColor</th>
+                <td>{{ session_card.contentColor }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_session_card_index') }}">back to list</a>
+
+    <a href="{{ path('app_session_card_edit', {'id': session_card.id}) }}">edit</a>
+
+    {{ include('session_card/_delete_form.html.twig') }}
+{% endblock %}

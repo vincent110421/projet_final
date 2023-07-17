@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SessionCard index{% endblock %}
+{% block js %}
+    <script src="{{ asset('js/activationsession.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <h1>SessionCard index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Title</th>
+                <th>Content</th>
+                <th>IsActive</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for session_card in session_cards %}
+            <tr>
+
+                <td>{{ session_card.title }}</td>
+                <td>{{ session_card.content }}</td>
+                <td><label class="form-switch mt-2 p-3">
+                        <input type="checkbox" {{ (session_card.isActive) ? 'checked' : '' }}
+                               data-id="{{ session_card.id }}">
+                        <span class="form-slider"></span>
+                    </label></td>
+                <td>{{ session_card.startDate|format_datetime( locale='fr',pattern='EEEE dd MMMM YYYY') }}</td>
+                <td>{{ session_card.endDate|format_datetime( locale='fr',pattern='EEEE dd MMMM YYYY') }}</td>
+                <td>{{ session_card.price  }} €</td>
+                <td>
+                    <a href="{{ path('app_session_card_show', {'id': session_card.id}) }}">show</a>
+                    <a href="{{ path('app_session_card_edit', {'id': session_card.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_session_card_new') }}">Create new</a>
+{% endblock %}
