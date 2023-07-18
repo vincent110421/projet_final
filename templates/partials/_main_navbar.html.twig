@@ -69,9 +69,12 @@
                             </a>
 
                             <div class="dropdown-content white dropdown-right shadow-1 rounded-1">
+
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <a class="dropdown-item" href="{{ path('app_home_banner_index') }}">Banniere Accueil</a>
                                     <a class="dropdown-item" href="{{ path('app_service_card_index') }}">Page Service</a>
+                                    <a class="dropdown-item" href="{{ path('app_training_index') }}">Page Formation</a>
+                                    <a class="dropdown-item" href="{{ path('app_session_card_index') }}">Page Session</a>
 
                                 {% endif %}
 

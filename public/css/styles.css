@@ -80,8 +80,9 @@ p{
 
 }
 
-i{
+.icon{
     color: #2A4999;
+    margin-bottom: 10px;
 }
 
 .cards{
@@ -624,4 +625,61 @@ th, td {
 
 .dropdown:hover{
     cursor: pointer;
+}
+
+.bouton{
+    position:relative;
+    display:inline-block;
+    float:right;
+}
+
+.banniere{
+    padding-top: 50px;
+
+}
+
+.rounded-table{
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.main__login-form {
+    margin-inline: auto;
+    /*max-width: 25em;*/
+}
+
+.login-form {
+    display: grid;
+    position: relative;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 1em;
+}
+
+.login-form::before {
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    content: "";
+    z-index: -4000;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    .login-form {
+        margin-top: 2rem;
+    }
+}
+
+.card-height{
+    height: 25vh!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
 }

@@ -1,49 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}HomeBanner index{% endblock %}
+{% block title %}Accueil bannière{% endblock %}
 
 {% block body %}
-    <h1>HomeBanner index</h1>
+    <div class="container">
+        <div class="row">
+           <div class="col-12">
+               <h1 >Accueil bannière</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Banner</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>activation</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for home_banner in home_banners %}
-            <tr>
-                <td>{{ home_banner.id }}</td>
-                <td><img src="{{ asset('images/banniere/'~home_banner.banner) }}" style="height: 15vh" alt=""></td>
-                <td>{{ home_banner.title }}</td>
-                <td>{{ home_banner.content }}</td>
-                <td>
-                    <label class="form-switch mt-2 p-3">
-                        <input type="checkbox" {{ (home_banner.isActive) ? 'checked' : '' }}
-                               data-id="{{ home_banner.id }}">
-                        <span class="form-slider"></span>
-                    </label>
-                </td>
-                <td>
-                    <a href="{{ path('app_home_banner_show', {'id': home_banner.id}) }}">show</a>
-                    <a href="{{ path('app_home_banner_edit', {'id': home_banner.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+           </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8 mt-5 mx-auto">
+                <table class="rounded-table mb-5">
+                    <thead>
+                    <tr>
 
-    <a class="btn btn-primary" href="{{ path('app_home_banner_new') }}">Ajouter</a>
+                        <th>Bannière</th>
+                        <th>Titre</th>
+                        <th>Contenu</th>
+                        <th>activation</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for home_banner in home_banners %}
+                        <tr>
+
+                            <td><img src="{{ asset('images/banniere/'~home_banner.banner) }}" style="height: 15vh" alt=""></td>
+                            <td>{{ home_banner.title }}</td>
+                            <td>{{ home_banner.content }}</td>
+                            <td>
+                                <label class="form-switch mt-2 p-3">
+                                    <input type="checkbox" {{ (home_banner.isActive) ? 'checked' : '' }}
+                                           data-id="{{ home_banner.id }}">
+                                    <span class="form-slider"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-primary" href="{{ path('app_home_banner_show', {'id': home_banner.id}) }}"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-outline-warning" href="{{ path('app_home_banner_edit', {'id': home_banner.id}) }}"><i class="fa fa-edit"></i></a>
+                                <form method="post" action="{{ path('app_home_banner_delete', {'id': home_banner.id}) }}" >
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ home_banner.id) }}">
+                                    <button class="btn btn-outline-danger m-0"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a class="btn btn-primary w-100" href="{{ path('app_home_banner_new') }}">Ajouter</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 {% endblock %}
 
 {% block js %}

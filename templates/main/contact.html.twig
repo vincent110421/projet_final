@@ -4,9 +4,10 @@
 
 {% block body %}
     {#  Grille Bootstrap  #}
-    <div class="container-fluid">
+    <div class="container-fluid mt-5 mb-5">
         <div class="row">
-            <div class="col-12 col-md-4 mx-auto">
+            <div class="col-12 col-md-4 mx-auto login-form main__login-form">
+                <h1 class="mb-5">Nous Contacter</h1>
                 {{ form_start(form) }}
 
                 {#    Affichage des erreurs générales du formulaire #}
@@ -32,7 +33,8 @@
                 <div class="form-group">
                     <div class="g-recaptcha" data-sitekey="{{ google_recaptcha_site_key }}"></div>
                 </div>
-
+                {# Inclusion du  *champ obligatoire #}
+                <small>*champ obligatoire</small>
                 {{ form_row(form.save) }}
 
 
@@ -41,15 +43,85 @@
             </div>
         </div>
     </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23931.45372265436!2d-0.15194999745715007!3d43.24572926495798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd563219cfe35ef1%3A0x841010d715aa1e5a!2sRue%20des%20%C3%89coles%2C%2064420%20Espoey!5e0!3m2!1sfr!2sfr!4v1689515520673!5m2!1sfr!2sfr" style="width: 100%; height: 400px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23931.45372265436!2d-0.15194999745715007!3d43.24572926495798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd563219cfe35ef1%3A0x841010d715aa1e5a!2sRue%20des%20%C3%89coles%2C%2064420%20Espoey!5e0!3m2!1sfr!2sfr!4v1689515520673!5m2!1sfr!2sfr" style="width: 100%; height: 400px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    <div class="container-fluid my-5">
+
+
+        <footer class=" container mt-4 pt-3  text-white text-center text-lg-start" style="background-color: #23242a;">
+            <!-- Grid container -->
+            <div class="container-fluid p-4">
+                <!--Grid row-->
+                <div class="row mt-4 justify-content-around">
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0 d-flex justify-content-around align-items-center">
+
+
+                            <!-- Facebook -->
+                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
+                                        class="fab fa-facebook-f"></i></a>
+                            <!-- Instagram -->
+                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                            <!-- Twitter -->
+                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
+                            <!-- Google + -->
+                            <a type="button" class="btn btn-floating btn-warning btn-lg"><i
+                                        class="fab fa-google-plus-g"></i></a>
+                            <!-- Linkedin -->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+
+
+                        <ul class="fa-ul" style="margin-left: 1.65em;">
+                            <li class="mb-3">
+                                <span class="ms-2"><i class="fas fa-home me-2"></i> Rue des Ecoles ESPOEY FR</span>
+                            </li>
+                            <li class="mb-3">
+                                <span class="ms-2"><i class="fas fa-envelope me-2"></i> contact@lebosq-networks.fr</span>
+                            </li>
+                            <li class="mb-3">
+                                <span
+                                        class="ms-2"><i class="fas fa-phone me-2"></i> 05 59 98 04 86 </span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                </div>
+            </div>
+
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                Copyright : © 2023 VILA VINCENT |
+
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+    </div>
 
 
 {% endblock %}
 {% block css %}
     {# Insertion du fichier JS dans le block stylesheets, ce n'est pas une erreur, la documentation de Recaptcha préconise en effet d'intégrer ce fichier JS dans le head #}
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
-{% endblock %}
+<!-- Remove the container if you want to extend the Footer to full width. -->
+        {% endblock %}
 

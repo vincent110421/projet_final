@@ -1,34 +1,70 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}HomeBanner{% endblock %}
+{% block title %}Détail{% endblock %}
 
 {% block body %}
-    <h1>HomeBanner</h1>
+    <div class="container mt-5">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ home_banner.id }}</td>
-            </tr>
-            <tr>
-                <th>Banner</th>
-                <td>{{ home_banner.banner }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ home_banner.title }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ home_banner.content }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <h1 class="detail mb-5">Détail</h1>
+                <div class="d-flex justify-content-center mb-5 align-items-center">
+                <a href="{{ path('app_home_banner_index') }}" class="btn btn-primary me-3"><i class="fa fa-arrow-left"></i> Retour à la liste</a>
 
-    <a href="{{ path('app_home_banner_index') }}">back to list</a>
+                <form method="post" action="{{ path('app_home_banner_delete', {'id': home_banner.id}) }}" >
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ home_banner.id) }}">
+                    <button class="btn btn-danger m-0"><i class="fa fa-trash"></i> Supprimer</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <a href="{{ path('app_home_banner_edit', {'id': home_banner.id}) }}">edit</a>
 
-    {{ include('home_banner/_delete_form.html.twig') }}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 mx-auto">
+
+                <table class="rounded-table rounded-3 mb-5">
+                    <thead>
+                    <tr>
+
+                        <th>Bannière</th>
+                        <th>Titre</th>
+                        <th>Contenu</th>
+                        <th>Actif</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td> <img src="{{ asset('/images/banniere/' ~ home_banner.banner) }}"
+                                  alt="{{ home_banner.id }}" class="img-table" style="height:15vh">
+                        </td>
+
+
+
+                        <td>{{ home_banner.title }}</td>
+
+
+
+                        <td>{{ home_banner.content }}</td>
+
+
+
+                        <td>{{ home_banner.isActive ? 'Oui' : 'Non'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{ path('app_home_banner_edit', {'id': home_banner.id}) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Modifer</a>
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock %}
+

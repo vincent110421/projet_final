@@ -22,7 +22,10 @@ class ContactFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Adresse Email',
+                'label' => 'Adresse Email*',
+                'label_attr' => [
+                    'class' => 'fw-bold',
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Merci de renseigner une adresse email',
@@ -34,7 +37,10 @@ class ContactFormType extends AbstractType
             ])
 
             ->add('name',TextType::class, [
-                'label' => 'Nom',
+                'label' => 'Nom*',
+                'label_attr' => [
+                    'class' => 'fw-bold',
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Merci de renseigner votre nom',
@@ -51,7 +57,10 @@ class ContactFormType extends AbstractType
             ])
 
             ->add('firstname', TextType::class, [
-        'label' => 'Prénom',
+        'label' => 'Prénom*',
+                'label_attr' => [
+                    'class' => 'fw-bold',
+                ],
         'constraints' => [
             new NotBlank([
                 'message' => 'Merci de renseigner votre Prénom',
@@ -68,7 +77,10 @@ class ContactFormType extends AbstractType
     ])
 
             ->add('subject',TextType::class, [
-                'label' => 'Sujet',
+                'label' => 'Sujet*',
+                'label_attr' => [
+                    'class' => 'fw-bold',
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Merci de renseigner votre sujet',
@@ -84,7 +96,10 @@ class ContactFormType extends AbstractType
                 ],
             ])
             ->add('message',TextareaType::class, [
-                'label' => 'Message',
+                'label' => 'Message*',
+                'label_attr' => [
+                    'class' => 'fw-bold',
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Merci de renseigner votre message',
@@ -99,7 +114,7 @@ class ContactFormType extends AbstractType
                     ]),
                 ],
             ])
-            // Bouton de validation
+//             Bouton de validation
             ->add('save', SubmitType::class,[
                 'label'=> 'Envoyé',
                 'attr' => [

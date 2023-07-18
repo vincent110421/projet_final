@@ -3,30 +3,46 @@
 {% block title %}ServiceCard index{% endblock %}
 
 {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
     <h1>ServiceCard index</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-md-8 mt-5 mx-auto">
+        <table class="rounded-table mb-5">
 
-    <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>TitleColor</th>
-                <th>ContentColor</th>
+
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Titre en couleur</th>
+                <th>Contenu en couleur</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for service_card in service_cards %}
             <tr>
-                <td>{{ service_card.id }}</td>
+
                 <td>{{ service_card.title }}</td>
                 <td>{{ service_card.content }}</td>
                 <td>{{ service_card.titleColor }}</td>
                 <td>{{ service_card.contentColor }}</td>
                 <td>
-                    <a href="{{ path('app_service_card_show', {'id': service_card.id}) }}">show</a>
-                    <a href="{{ path('app_service_card_edit', {'id': service_card.id}) }}">edit</a>
+                    <a href="{{ path('app_service_card_show', {'id': service_card.id}) }}">détail</a>
+                    <a href="{{ path('app_service_card_edit', {'id': service_card.id}) }}">modifier</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary" href="{{ path('app_service_card_show', {'id': service_card.id}) }}"><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-warning" href="{{ path('app_service_card_edit', {'id': service_card.id}) }}"><i class="fa fa-edit"></i></a>
+                    <form method="post" action="{{ path('app_service_card_delete', {'id': service_card.id}) }}" >
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ service_card.id) }}">
+                        <button class="btn btn-outline-danger m-0"><i class="fa fa-trash"></i></button>
+                    </form>
                 </td>
             </tr>
         {% else %}
@@ -36,6 +52,9 @@
         {% endfor %}
         </tbody>
     </table>
+        <a class="btn btn-primary w-100" href="{{ path('app_service_card_new') }}">Ajouter</a>
+    </div>
+</div>
 
-    <a class="btn btn-primary" href="{{ path('app_service_card_new') }}">Ajouter</a>
+
 {% endblock %}

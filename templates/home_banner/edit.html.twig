@@ -1,13 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit HomeBanner{% endblock %}
+{% block title %}Modifier bannière{% endblock %}
 
 {% block body %}
-    <h1>Edit HomeBanner</h1>
 
-    {{ include('home_banner/_form.html.twig', {'button_label': 'modifier'}) }}
 
-    <a href="{{ path('app_home_banner_index') }}">back to list</a>
+
+
+    <div class="container mt-5">
+        <div class="row">
+
+            <div class="col-12 col-md-6 mx-auto login-form main__login-form">
+                <h1 class="mb-5">Modifier bannière</h1>
+
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <div class="d-flex align-items-center justify-content-between">
+                    <a class="btn btn-primary" href="{{ path('app_home_banner_index') }}"><i class="fa fa-arrow-left"></i> Retour à la liste</a>
+                <button class="btn btn-primary m-0"><i class="fa fa-edit"></i> {{ button_label|default('Modifier') }}</button>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
 
     {{ include('home_banner/_delete_form.html.twig') }}
 {% endblock %}
